@@ -11,6 +11,46 @@
 
 [![](images/showcase.png)](https://haxeflixel.com/showcase)
 
+## Codename Metal fork (instancing support)
+
+**This is the Flixel fork used by [Codename-Metal](https://github.com/TheComingUnitys/Codename-Metal)**
+(based on Flixel 5.3.0).  Flixel sprites are OpenFL `Bitmap` objects, so the instanced
+bitmap batching lives in
+[openfl-metal](https://github.com/TheComingUnitys/openfl-metal).  This fork adds the
+`FlxG.metalInstancing` toggle:
+
+```haxe
+FlxG.metalInstancing = false; // disable the Metal batch (default true)
+```
+
+### Use it with Codename-Metal
+
+```sh
+git clone https://github.com/TheComingUnitys/openfl-metal.git
+git clone https://github.com/TheComingUnitys/flixel-metal.git
+
+cd /path/to/Codename-Metal/CodenameEngine-1.0.1
+haxelib dev openfl  /path/to/openfl-metal
+haxelib dev flixel  /path/to/flixel-metal
+```
+
+Then build with the Metal backend as described in Codename-Metal's README
+(`-Dmetal -Dmetal_instancing`; the engine's `project.xml` enables both).  Do not mix this
+fork with Flixel 6.x: Codename Engine 1.0.1 uses the 5.3.0 API.
+
+Without the `metal_instancing` define this fork behaves like upstream Flixel 5.3.0.
+
+### Reverting to upstream Flixel
+
+```sh
+haxelib dev flixel      # remove the development directory link
+haxelib set flixel git  # restore the copy vendored by Codename-Metal
+```
+
+See `METAL-INSTANCING.md` for details.
+
+---
+
 ## Links
 
 Here are the most important links to get you started with HaxeFlixel:
