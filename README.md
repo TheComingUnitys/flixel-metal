@@ -20,7 +20,7 @@ bitmap batching lives in
 `FlxG.metalInstancing` toggle:
 
 ```haxe
-FlxG.metalInstancing = false; // disable the Metal batch (default true)
+FlxG.metalInstancing = true; // enable the Metal batch (default false / opt-in)
 ```
 
 ### Use it with Codename-Metal

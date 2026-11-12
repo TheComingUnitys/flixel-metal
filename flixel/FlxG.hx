@@ -156,7 +156,7 @@ class FlxG
 
 	#if metal_instancing
 	/** Enable/disable the Metal instanced bitmap batch (OpenFL-level). Default true. */
-	public static var metalInstancing(default, set):Bool = true;
+	public static var metalInstancing(default, set):Bool = false;
 
 	static function set_metalInstancing(value:Bool):Bool
 	{
